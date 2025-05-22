@@ -1188,6 +1188,7 @@
             }
         }
 
+        /* Light Theme (Default) */
         .freelance-info {
             margin-top: 40px;
             padding: 25px 30px;
@@ -1195,11 +1196,12 @@
             border-left: 4px solid #007BFF;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .freelance-info:hover {
             background-color: #f1f1f1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .freelance-info h3 {
@@ -1207,6 +1209,7 @@
             font-size: 1.75rem;
             margin-bottom: 10px;
             font-weight: 600;
+            transition: color 0.3s ease;
         }
 
         .freelance-info p {
@@ -1214,16 +1217,127 @@
             font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 12px;
+            transition: color 0.3s ease;
         }
 
         .freelance-info a {
             color: #007BFF;
             font-weight: 500;
+            text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .freelance-info a:hover {
             color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Dark Theme */
+        [data-theme="dark"] .freelance-info,
+        .dark .freelance-info,
+        body.dark .freelance-info {
+            background-color: #2a2a2a;
+            border-left: 4px solid #4da3ff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        [data-theme="dark"] .freelance-info:hover,
+        .dark .freelance-info:hover,
+        body.dark .freelance-info:hover {
+            background-color: #333333;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        }
+
+        [data-theme="dark"] .freelance-info h3,
+        .dark .freelance-info h3,
+        body.dark .freelance-info h3 {
+            color: #e0e0e0;
+        }
+
+        [data-theme="dark"] .freelance-info p,
+        .dark .freelance-info p,
+        body.dark .freelance-info p {
+            color: #b8b8b8;
+        }
+
+        [data-theme="dark"] .freelance-info a,
+        .dark .freelance-info a,
+        body.dark .freelance-info a {
+            color: #4da3ff;
+        }
+
+        [data-theme="dark"] .freelance-info a:hover,
+        .dark .freelance-info a:hover,
+        body.dark .freelance-info a:hover {
+            color: #80bfff;
+        }
+
+        /* Alternative: CSS Custom Properties Approach */
+        :root {
+            --freelance-bg: #f9f9f9;
+            --freelance-bg-hover: #f1f1f1;
+            --freelance-border: #007BFF;
+            --freelance-shadow: rgba(0, 0, 0, 0.05);
+            --freelance-shadow-hover: rgba(0, 0, 0, 0.08);
+            --freelance-text-primary: #222;
+            --freelance-text-secondary: #444;
+            --freelance-link: #007BFF;
+            --freelance-link-hover: #0056b3;
+        }
+
+        [data-theme="dark"] {
+            --freelance-bg: #2a2a2a;
+            --freelance-bg-hover: #333333;
+            --freelance-border: #4da3ff;
+            --freelance-shadow: rgba(0, 0, 0, 0.25);
+            --freelance-shadow-hover: rgba(0, 0, 0, 0.35);
+            --freelance-text-primary: #e0e0e0;
+            --freelance-text-secondary: #b8b8b8;
+            --freelance-link: #4da3ff;
+            --freelance-link-hover: #80bfff;
+        }
+
+        /* Using Custom Properties (Alternative Implementation) */
+        .freelance-info-v2 {
+            margin-top: 40px;
+            padding: 25px 30px;
+            background-color: var(--freelance-bg);
+            border-left: 4px solid var(--freelance-border);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--freelance-shadow);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .freelance-info-v2:hover {
+            background-color: var(--freelance-bg-hover);
+            box-shadow: 0 4px 12px var(--freelance-shadow-hover);
+        }
+
+        .freelance-info-v2 h3 {
+            color: var(--freelance-text-primary);
+            font-size: 1.75rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .freelance-info-v2 p {
+            color: var(--freelance-text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .freelance-info-v2 a {
+            color: var(--freelance-link);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .freelance-info-v2 a:hover {
+            color: var(--freelance-link-hover);
             text-decoration: underline;
         }
     </style>
